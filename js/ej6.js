@@ -6,6 +6,7 @@ function crearModifCookie(){
     var valor = prompt("Valor de la cookie");
     var fecha = prompt("Dia que expira la cookie");
     setCookie(nombre, valor, fecha);
+    verCookies();
 }
 
 function setCookie(nombre, valor, fecha){
@@ -16,7 +17,7 @@ function setCookie(nombre, valor, fecha){
 }
 
 function verCookies(){
-    console.log(document.cookie);
+    alert("Cookies actuales:" +"\n"+document.cookie);
 }
 
 function getCookie(nomCookie){
@@ -36,15 +37,16 @@ function getCookie(nomCookie){
 
 function leerCookie(){
     var nomCookie = prompt("Nombre de la cookie a leer");
-    console.log(nomCookie+":"+getCookie(nomCookie));
+    alert(nomCookie+":"+getCookie(nomCookie));
 }
 function borrarCookies(){
     var nomCookie = prompt("Nombre de la cookie a borrar");
    deleteCookie(nomCookie);
+   verCookies();
    
 }
 function deleteCookie(nombreCookie){
-    document.cookie = nombreCookie+"="+getCookie(nombreCookie)+";"+"expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    setCookie(nombreCookie, "", 0);
 }
 
 function init(){
