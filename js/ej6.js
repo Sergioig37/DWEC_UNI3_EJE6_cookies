@@ -55,4 +55,3 @@ function init(){
     document.getElementById("borrarCookie").addEventListener("click",borrarCookies,false);
 }
 
-console.log("Mondongo");
